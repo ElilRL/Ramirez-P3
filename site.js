@@ -39,8 +39,21 @@ const vue_app = Vue.createApp({
           },
 
       methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+            
+                  like(index) {
+                      this.movies[index].likes++; // Increment likes for the movie at the given index
+                  },
+                  dislike(index) {
+                      this.movies[index].dislikes++; // Increment dislikes for the movie at the given index
+                  },
+                  posterClick(index) {
+                      const movie = this.movies[index];
+                      movie.posterindex = (movie.posterindex + 1) % movie.posters.length; // Cycle through posters
+                  }
+              
       }
 })
 
 vue_app.mount("#vue_app")
+
+
