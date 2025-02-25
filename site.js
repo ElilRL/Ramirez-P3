@@ -19,41 +19,90 @@
 //
 // FOR STEP 16, ADD THREE OF YOUR OWN FAVORITE MOVIES WITH METADATA TO THE END OF THE JSON FILE LIST
 */
-
-
 const vue_app = Vue.createApp({
-      // This automatically imports your movies.json file and puts it into
-      //   the variable: movies
-      created () {
-            fetch('movies.json').then(response => response.json()).then(json => {
-                  this.movies = json
+    data() {
+        return {
+            title: "IMDB + Eliel's Top 8 Movies",
+            owner: "Eliel",
+            github: "https://github.com/elilrl/Ramirez-P3",
+            movies: [] 
+        };
+    },
+    methods: {
+        
+        like(index) {
+            this.movies[index].likes++; 
+        },
+        
+        dislike(index) {
+            this.movies[index].dislikes++; 
+        },
+        
+        posterClick(index) {
+            const movie = this.movies[index];
+            movie.posterindex = (movie.posterindex + 1) % movie.posters.length;
+        },
+        
+        getMonthText(dateArray) {
+            const [year, month, day] = dateArray; 
+
+            let monthText;
+            switch (month) {
+                case 1:
+                    monthText = "January";
+                    break;
+                case 2:
+                    monthText = "February";
+                    break;
+                case 3:
+                    monthText = "March";
+                    break;
+                case 4:
+                    monthText = "April";
+                    break;
+                case 5:
+                    monthText = "May";
+                    break;
+                case 6:
+                    monthText = "June";
+                    break;
+                case 7:
+                    monthText = "July";
+                    break;
+                case 8:
+                    monthText = "August";
+                    break;
+                case 9:
+                    monthText = "September";
+                    break;
+                case 10:
+                    monthText = "October";
+                    break;
+                case 11:
+                    monthText = "November";
+                    break;
+                case 12:
+                    monthText = "December";
+                    break;
+                default:
+                    monthText = "Invalid Month"; 
+            }
+
+           
+            return `${monthText} ${day}, ${year}`;
+        }
+    },
+    
+    created() {
+        fetch('movies.json') 
+            .then(response => response.json()) 
+            .then(json => {
+                this.movies = json; 
             })
-      },
-      data() {
-            return {
-                  title: "IMDB + Eliel's Top 8 Movies", 
-                  owner: "Eliel", 
-                  github: "https://github.com/elilrl/Ramirez-P3", 
-                  movies: [] 
-              };
-          },
+            .catch(error => {
+                console.error("Error loading movies.json:", error); 
+            });
+    }
+});
 
-      methods: {
-            
-                  like(index) {
-                      this.movies[index].likes++; // Increment likes for the movie at the given index
-                  },
-                  dislike(index) {
-                      this.movies[index].dislikes++; // Increment dislikes for the movie at the given index
-                  },
-                  posterClick(index) {
-                      const movie = this.movies[index];
-                      movie.posterindex = (movie.posterindex + 1) % movie.posters.length; // Cycle through posters
-                  }
-              
-      }
-})
-
-vue_app.mount("#vue_app")
-
-
+vue_app.mount("#vue_app");
