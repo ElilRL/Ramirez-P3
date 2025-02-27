@@ -28,7 +28,13 @@ const vue_app = Vue.createApp({
             movies: [] 
         };
     },
+    timeText(minutes) {
+        let hours = Math.trunc(minutes / 60);
+        let mins = minutes % 60;
+        return `${hours}h ${mins}m`;
+    },
     methods: {
+        
         
         like(index) {
             this.movies[index].likes++; 
@@ -91,6 +97,7 @@ const vue_app = Vue.createApp({
            
             return `${monthText} ${day}, ${year}`;
         }
+        
     },
     
     created() {
@@ -103,6 +110,7 @@ const vue_app = Vue.createApp({
                 console.error("Error loading movies.json:", error); 
             });
     }
+    
 });
 
 vue_app.mount("#vue_app");
