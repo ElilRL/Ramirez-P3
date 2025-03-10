@@ -68,5 +68,50 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "Spider Man",
+            "iscore": 7.4,
+            "rating": "PG-13",
+            "runtime": 121,
+            "released": [2002, 5, 3],
+            "country": "USA",
+            "posters": ["img/spiderman1.jpg","img/Spiderman2.jpg","img/spider3.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0145487/",
+            "website": "https://www.gradesaver.com/spider-man-2002-film/study-guide/summary",
+            "likes": 1045,
+            "dislikes": 94,
+            "posterindex": 0
+      },
+      {
+            "title": "The Sandlot",
+            "iscore": 7.8,
+            "rating": "PG",
+            "runtime": 102,
+            "released": [1993, 4, 9],
+            "country": "USA",
+            "posters": ["img/TheSandLot1.jpg","img/TheSandLot2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0108037/",
+            "website": "https://screenrant.com/the-sandlot-true-story-baseball-inspiration-explained/",
+            "likes": 879,
+            "dislikes": 295,
+            "posterindex": 0
+      },
+      {
+            "title": "Venom",
+            "iscore": 6.6,
+            "rating": "PG-13",
+            "runtime": 112,
+            "released": [2018, 10, 5],
+            "country": "USA",
+            "posters": ["img/Venom1.jpg","img/Venom2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt1270797/",
+            "website": "https://www.cinemablend.com/news/2574076/venom-everything-you-need-to-remember-about-the-first-movie-ahead-of-let-there-be-carnage",
+            "likes": 642,
+            "dislikes": 231,
+            "posterindex": 0
       }
 ]
+
+
+
